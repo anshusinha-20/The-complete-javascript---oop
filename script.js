@@ -2,23 +2,29 @@
 
 // 208. constructor functions and the new operator
 
-// // constructor function
-// const Person = function (firstName, birthYear) {
-//   this.firstName = firstName;
-//   this.birthYear = birthYear;
+// constructor function
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
 
-//   // method
-//   this.calcAge = function () {
-//     console.log(2023 - this.birthYear);
-//   };
-// };
+  // // method
+  // this.calcAge = function () {
+  //   console.log(2023 - this.birthYear);
+  // };
+};
 
-// // object
-// const anshu = new Person("Anshu", 2003);
-// console.log(anshu);
+// object
+const anshu = new Person("Anshu", 2003);
+console.log(anshu);
 // anshu.calcAge();
-// console.log(anshu instanceof Person);
+console.log(anshu instanceof Person);
 
 /////
 
 // 209. prototypes
+
+Person.prototype.calcAge = function () {
+  console.log(2023 - this.birthYear);
+};
+
+anshu.calcAge();
